@@ -3,23 +3,22 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace StarChart.Models
 {
     public class CelestialObject
     {
-        public int Id;
+        public int Id { get; set;  }
 
-        public int? OrbitedObjectId;
+        public int? OrbitedObjectId { get; set; }
 
-        [Required()]
-        public string Name;
+        [Required]
+        public string Name { get; set; }
 
         [NotMapped]
-        public List<CelestialObject> Satellites;
+        public List<CelestialObject> Satellites { get; set; }
 
-        public TimeSpan OrbitalPeriod;
+        public TimeSpan OrbitalPeriod { get; set; }
     }
 }
